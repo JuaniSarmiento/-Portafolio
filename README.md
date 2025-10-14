@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Web - Juani Sarmiento
 
-## Getting Started
+Portfolio web minimalista one-page que posiciona a Juani Sarmiento como un desarrollador Backend Expert y AI Specialist de nivel senior.
 
-First, run the development server:
+## 🎯 Características
+
+- **Diseño minimalista**: Paleta monocromática negro/gris/blanco con efectos sutiles
+- **Responsive**: Optimizado para desktop, tablet y mobile
+- **Animaciones fluidas**: Implementadas con Framer Motion
+- **Performance optimizada**: Next.js 15 con Turbopack
+- **Componentes reutilizables**: shadcn/ui + Tailwind CSS
+
+## 🚀 Stack Tecnológico
+
+- **Framework**: Next.js 15 con App Router
+- **Lenguaje**: TypeScript
+- **Estilos**: Tailwind CSS v4
+- **Animaciones**: Framer Motion
+- **Componentes**: shadcn/ui
+- **Iconos**: Lucide React
+- **Formularios**: React Hook Form + Zod
+
+## 📋 Secciones
+
+1. **Hero Section**: Presentación con badges, propuesta de valor y CTAs
+2. **Proyectos Destacados**: VOID E-Commerce y Oráculo Futbolero
+3. **Sobre Mí**: Bio profesional y personal
+4. **Contacto**: CTA directo para contacto
+
+## 🛠️ Instalación
 
 ```bash
+# Clonar el repositorio
+git clone <repository-url>
+cd portfolio-web-juan
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Construir para producción
+npm run build
+
+# Ejecutar en producción
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Personalización
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para personalizar el portfolio, edita las siguientes variables:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Links sociales**: GitHub y LinkedIn en `src/app/page.tsx`
+- **Email de contacto**: Actualizar el email en la sección de contacto
+- **URLs de proyectos**: Agregar links reales a demos y repositorios
+- **Contenido**: Modificar textos y descripciones según necesidades
 
-## Learn More
+## 📱 Responsive Design
 
-To learn more about Next.js, take a look at the following resources:
+El portfolio está optimizado para:
+- Desktop (1920px+)
+- Laptop (1024px+)  
+- Tablet (768px+)
+- Mobile (320px+)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⚡ Performance Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Lazy loading** para componentes fuera del viewport
+- **Animaciones optimizadas** con Framer Motion
+- **Imágenes optimizadas** con Next.js Image
+- **CSS crítico** inline para mejor First Contentful Paint
+- **Precarga** de recursos importantes
 
-## Deploy on Vercel
+## 🚀 Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vercel (Recomendado)
+```bash
+# Conectar con Vercel
+vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Deploy automático en push a main
+git push origin main
+```
+
+### Netlify
+```bash
+# Build del proyecto
+npm run build
+
+# Upload de la carpeta .next a Netlify
+```
+
+## 🎯 Objetivos Alcanzados
+
+- ✅ Posicionamiento como desarrollador senior (no junior)
+- ✅ Showcasing de proyectos técnicos avanzados
+- ✅ Diseño profesional y moderno
+- ✅ Experiencia de usuario fluida
+- ✅ Performance optimizada
+- ✅ Responsive design completo
+
+## 📧 Contacto
+
+- **Email**: juanisarmientoomartinez@gmail.com
+- **GitHub**: https://github.com/JuaniSarmiento  
+- **LinkedIn**: https://linkedin.com/in/tuusuario
+
+## 🔗 Enlaces de Proyectos
+
+- **VOID E-Commerce**: https://github.com/Timba-SA/VOID-E-COMMERCE.git
+- **Oráculo Futbolero**: https://github.com/JuaniSarmiento/Proyecto-IA-de-Futbol.git
+
+---
+
+*Desarrollado con � por Juani Sarmiento*
