@@ -35,7 +35,7 @@ export default function Home() {
               <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
                 <Badge variant="secondary" className="bg-gradient-to-r from-purple-600/20 to-purple-500/20 text-purple-200 border-purple-500/30 badge-glow px-5 py-2.5 text-base font-semibold">
                   <Code2 className="w-5 h-5 mr-2" />
-                  Full Stack Developer
+                  Backend Developer
                 </Badge>
                 <Badge variant="secondary" className="bg-gradient-to-r from-blue-600/20 to-blue-500/20 text-blue-200 border-blue-500/30 badge-glow px-5 py-2.5 text-base font-semibold">
                   <Brain className="w-5 h-5 mr-2" />
@@ -84,7 +84,7 @@ export default function Home() {
                 <Github className="w-6 h-6 text-neutral-300" />
               </motion.a>
               <motion.a
-                href="https://www.linkedin.com/in/juani-sarmiento-b717631b5/"
+                href="https://www.linkedin.com/in/juan-ignacio-sarmiento-b717631b5/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 rounded-xl bg-neutral-900 hover:bg-neutral-800 transition-colors border border-neutral-700 hover:border-neutral-600 smooth-hover"
@@ -691,7 +691,7 @@ export default function Home() {
                     <Github className="w-6 h-6 text-neutral-300 group-hover:text-purple-300 transition-colors" />
                   </motion.a>
                   <motion.a
-                    href="https://linkedin.com/in/tuusuario"
+                    href="https://www.linkedin.com/in/juan-ignacio-sarmiento-b717631b5/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-4 rounded-xl bg-neutral-800/50 hover:bg-blue-600/30 transition-all border border-neutral-700 hover:border-blue-500/50 smooth-hover group"
