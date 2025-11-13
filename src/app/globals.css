@@ -151,7 +151,16 @@
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Clean monochrome gradients */
+/* Modern colorful gradients */
+.gradient-text-hero {
+  background: linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
 .gradient-text-minimal {
   background: linear-gradient(135deg, #ffffff, #a3a3a3);
   -webkit-background-clip: text;
@@ -163,7 +172,16 @@
   background: linear-gradient(135deg, #262626, #171717);
 }
 
-/* Subtle hover effects */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Enhanced glow effects */
 .glow-minimal {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
 }
@@ -174,12 +192,16 @@
 
 /* Smooth transitions */
 .smooth-hover {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Clean badge style */
+/* Badge with glow effect */
 .badge-minimal {
   animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+.badge-glow {
+  animation: badge-glow-pulse 3s ease-in-out infinite;
 }
 
 @keyframes subtle-pulse {
@@ -188,6 +210,15 @@
   }
   50% {
     opacity: 1;
+  }
+}
+
+@keyframes badge-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
   }
 }
 

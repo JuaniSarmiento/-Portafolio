@@ -12,35 +12,44 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 relative">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-black to-blue-900/10" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent" />
+        
+        <div className="max-w-5xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <div className="mb-12">
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-medium mb-8 gradient-text-minimal tracking-tight">
+              <motion.h1 
+                className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 gradient-text-hero tracking-tight"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
                 Juani Sarmiento
-              </h1>
-              <div className="flex items-center justify-center gap-4 mb-8 flex-wrap">
-                <Badge variant="secondary" className="bg-neutral-900 text-neutral-200 border-neutral-700 badge-minimal px-4 py-2 text-base">
+              </motion.h1>
+              <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
+                <Badge variant="secondary" className="bg-gradient-to-r from-purple-600/20 to-purple-500/20 text-purple-200 border-purple-500/30 badge-glow px-5 py-2.5 text-base font-semibold">
                   <Code2 className="w-5 h-5 mr-2" />
                   Full Stack Developer
                 </Badge>
-                <Badge variant="secondary" className="bg-neutral-900 text-neutral-200 border-neutral-700 badge-minimal px-4 py-2 text-base">
+                <Badge variant="secondary" className="bg-gradient-to-r from-blue-600/20 to-blue-500/20 text-blue-200 border-blue-500/30 badge-glow px-5 py-2.5 text-base font-semibold">
                   <Brain className="w-5 h-5 mr-2" />
                   AI Specialist
                 </Badge>
-                <Badge variant="secondary" className="bg-neutral-900 text-neutral-200 border-neutral-700 badge-minimal px-4 py-2 text-base">
+                <Badge variant="secondary" className="bg-gradient-to-r from-green-600/20 to-green-500/20 text-green-200 border-green-500/30 badge-glow px-5 py-2.5 text-base font-semibold">
                   <Server className="w-5 h-5 mr-2" />
-                  Backend Expert
+                  Backend Architect
                 </Badge>
               </div>
             </div>
 
-            <p className="text-xl md:text-2xl lg:text-3xl text-neutral-300 mb-16 max-w-4xl mx-auto leading-relaxed">
-              Construyo <span className="text-white font-semibold">aplicaciones web inteligentes</span> y <span className="text-white font-semibold">escalables</span> que resuelven problemas reales.
+            <p className="text-xl md:text-2xl lg:text-3xl text-neutral-200 mb-16 max-w-4xl mx-auto leading-relaxed font-light">
+              Diseño y construyo <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 font-bold">sistemas escalables</span> y <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 font-bold">soluciones inteligentes</span> que transforman ideas en realidad.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
@@ -55,7 +64,7 @@ export default function Home() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-neutral-600 text-neutral-200 hover:bg-neutral-800 hover:border-neutral-500 hover:text-white smooth-hover font-semibold text-lg px-8 py-4 h-auto"
+                className="bg-white text-black hover:bg-neutral-100 border-0 smooth-hover font-semibold text-lg px-8 py-4 h-auto"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Mail className="mr-3 h-5 w-5" />
@@ -75,7 +84,7 @@ export default function Home() {
                 <Github className="w-6 h-6 text-neutral-300" />
               </motion.a>
               <motion.a
-                href="https://linkedin.com/in/tuusuario"
+                href="https://www.linkedin.com/in/juani-sarmiento-b717631b5/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 rounded-xl bg-neutral-900 hover:bg-neutral-800 transition-colors border border-neutral-700 hover:border-neutral-600 smooth-hover"
@@ -99,56 +108,58 @@ export default function Home() {
       </section>
 
       {/* Proyectos Destacados */}
-      <section id="projects" className="py-24 px-6">
-        <div className="max-w-5xl mx-auto">
+      <section id="projects" className="py-32 px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/5 to-black" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-24"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 gradient-text-minimal">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text-hero">
               Proyectos Destacados
             </h2>
-            <p className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-              Casos de estudio que demuestran mi expertise en backend engineering y machine learning
+            <p className="text-xl md:text-2xl text-neutral-300 max-w-4xl mx-auto leading-relaxed">
+              Arquitecturas complejas y sistemas de alta performance que demuestran expertise técnico real
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* VOID E-Commerce */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {/* ORION - Piloto Automático IA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-neutral-900 border-neutral-800 hover:border-neutral-700 transition-all duration-200 group glass glass-hover h-full">
-                <CardHeader>
+              <Card className="bg-gradient-to-br from-purple-950/50 to-neutral-900 border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 group glass glass-hover h-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <CardHeader className="relative z-10">
                   <div className="flex justify-between items-start mb-4">
-                    <CardTitle className="text-xl text-white group-hover:text-neutral-200 transition-colors">
-                      VOID E-Commerce
+                    <CardTitle className="text-2xl text-white group-hover:text-purple-200 transition-colors font-bold">
+                      ORION - Piloto Automático IA
                     </CardTitle>
-                    <Badge className="bg-neutral-800 text-neutral-300 border-neutral-700">Backend Engineering</Badge>
+                    <Badge className="bg-purple-600/30 text-purple-200 border-purple-500/50 font-semibold">AI + Microservices</Badge>
                   </div>
-                  <CardDescription className="text-neutral-400 text-base">
-                    Arquitectura de microservicios completa para plataforma de e-commerce de alto rendimiento
+                  <CardDescription className="text-neutral-300 text-base font-medium">
+                    Sistema de IA end-to-end para e-commerce: automatiza +90% de consultas post-venta con arquitectura de 5 microservicios
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-neutral-400 mb-6 leading-relaxed text-sm">
-                    <strong className="text-white">Mi rol:</strong> Responsable principal del backend. Desarrollé una plataforma completa de e-commerce 
-                    con carrito de compras, checkout integrado con MercadoPago, dashboard administrativo y sistema de gestión de productos.
+                <CardContent className="relative z-10">
+                  <p className="text-neutral-200 mb-6 leading-relaxed text-sm">
+                    <strong className="text-purple-300">Arquitecto Principal:</strong> Diseñé y desarrollé desde cero un sistema de IA completo que automatiza operaciones post-venta con 97.8% de precisión usando NLP (spaCy + Regex) y arquitectura de microservicios orquestados con Docker.
                   </p>
                   
-                  <ProjectGallery images={voidImages} projectName="VOID E-Commerce" />
-                  
-                  <div className="mb-6">
-                    <h4 className="text-white font-medium mb-3 text-sm">Stack Tecnológico</h4>
+                  <div className="mb-6 bg-black/30 rounded-lg p-4 border border-purple-500/20">
+                    <h4 className="text-purple-300 font-semibold mb-3 text-sm flex items-center">
+                      <Brain className="w-4 h-4 mr-2" />
+                      Stack Tecnológico
+                    </h4>
                     <div className="flex flex-wrap gap-2">
-                      {["FastAPI", "Docker", "MySQL", "MongoDB", "Celery", "Redis", "MercadoPago API"].map((tech) => (
-                        <Badge key={tech} variant="outline" className="border-neutral-700 text-neutral-400 hover:border-neutral-600 smooth-hover text-xs">
+                      {["Python", "FastAPI", "Docker Compose", "spaCy (NLP)", "MongoDB", "Regex", "Pydantic", "HTTPX", "GitHub Actions"].map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-purple-500/40 text-purple-200 hover:border-purple-400 hover:bg-purple-500/10 smooth-hover text-xs font-medium">
                           {tech}
                         </Badge>
                       ))}
@@ -156,25 +167,154 @@ export default function Home() {
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="text-white font-medium mb-3 text-sm">Features Implementados</h4>
-                    <ul className="text-xs text-neutral-400 space-y-1">
-                      <li>• Carrito de compras con gestión de stock</li>
-                      <li>• Checkout completo con cálculo de envío</li>
-                      <li>• Dashboard admin con métricas en tiempo real</li>
-                      <li>• Integración completa con MercadoPago API</li>
-                      <li>• Sistema de autenticación y roles de usuario</li>
+                    <h4 className="text-white font-semibold mb-3 text-sm">Logros Clave</h4>
+                    <ul className="text-xs text-neutral-300 space-y-2">
+                      <li className="flex items-start"><span className="text-purple-400 mr-2 font-bold">•</span><span><strong className="text-white">Arquitectura de 5 Microservicios:</strong> API Gateway, NLU Service, Business Logic, Integrations, Database</span></li>
+                      <li className="flex items-start"><span className="text-purple-400 mr-2 font-bold">•</span><span><strong className="text-white">Motor NLP:</strong> 97.8% de precisión en clasificación de intenciones y extracción de entidades</span></li>
+                      <li className="flex items-start"><span className="text-purple-400 mr-2 font-bold">•</span><span><strong className="text-white">Sistema de Escalada:</strong> Alertas automáticas vía SMTP y tracking de conversaciones fallidas</span></li>
+                      <li className="flex items-start"><span className="text-purple-400 mr-2 font-bold">•</span><span><strong className="text-white">CI/CD Completo:</strong> Pipeline automatizado con tests E2E (100% uptime bajo estrés)</span></li>
+                      <li className="flex items-start"><span className="text-purple-400 mr-2 font-bold">•</span><span><strong className="text-white">Dashboard en Tiempo Real:</strong> Panel de control con Jinja2 para auditoría de conversaciones</span></li>
                     </ul>
                   </div>
 
                   <div className="flex gap-3">
                     <Button 
                       size="sm" 
-                      variant="outline" 
-                      className="border-neutral-700 text-neutral-300 hover:bg-neutral-800 smooth-hover"
+                      className="bg-purple-600/20 border border-purple-500/50 text-purple-200 hover:bg-purple-600/30 hover:border-purple-400 smooth-hover font-semibold"
+                      onClick={() => window.open('https://github.com/JuaniSarmiento/Orion.git', '_blank')}
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Ver Código
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* ConectarProfesionales - Marketplace Backend */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-gradient-to-br from-blue-950/50 to-neutral-900 border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 group glass glass-hover h-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <CardHeader className="relative z-10">
+                  <div className="flex justify-between items-start mb-4">
+                    <CardTitle className="text-2xl text-white group-hover:text-blue-200 transition-colors font-bold">
+                      ConectarProfesionales
+                    </CardTitle>
+                    <Badge className="bg-blue-600/30 text-blue-200 border-blue-500/50 font-semibold">Backend + GIS</Badge>
+                  </div>
+                  <CardDescription className="text-neutral-300 text-base font-medium">
+                    API RESTful headless para marketplace: motor geoespacial (PostGIS), pagos con escrow y sistema KYC completo
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  <p className="text-neutral-200 mb-6 leading-relaxed text-sm">
+                    <strong className="text-blue-300">Arquitecto Backend:</strong> Desarrollé la API completa de un marketplace headless conectando clientes con profesionales. Implementé búsqueda geoespacial con PostGIS, sistema de pagos con escrow (MercadoPago) y workflow KYC con validación de identidad.
+                  </p>
+                  
+                  <div className="mb-6 bg-black/30 rounded-lg p-4 border border-blue-500/20">
+                    <h4 className="text-blue-300 font-semibold mb-3 text-sm flex items-center">
+                      <Server className="w-4 h-4 mr-2" />
+                      Stack Tecnológico
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {["FastAPI (Async)", "PostgreSQL", "PostGIS", "SQLAlchemy", "GeoAlchemy2", "MercadoPago SDK", "Firebase", "JWT + OAuth2", "Docker", "Pytest"].map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-blue-500/40 text-blue-200 hover:border-blue-400 hover:bg-blue-500/10 smooth-hover text-xs font-medium">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="text-white font-semibold mb-3 text-sm">Logros Clave</h4>
+                    <ul className="text-xs text-neutral-300 space-y-2">
+                      <li className="flex items-start"><span className="text-blue-400 mr-2 font-bold">•</span><span><strong className="text-white">Motor Geoespacial:</strong> Búsquedas con PostGIS (ST_DWithin) para matchear clientes/profesionales por ubicación</span></li>
+                      <li className="flex items-start"><span className="text-blue-400 mr-2 font-bold">•</span><span><strong className="text-white">Sistema de Pagos con Escrow:</strong> Integración completa con MercadoPago (Webhooks + Payouts)</span></li>
+                      <li className="flex items-start"><span className="text-blue-400 mr-2 font-bold">•</span><span><strong className="text-white">Autenticación + RBAC:</strong> JWT, OAuth2, bcrypt y sistema de roles (Admin/Profesional/Cliente)</span></li>
+                      <li className="flex items-start"><span className="text-blue-400 mr-2 font-bold">•</span><span><strong className="text-white">Optimización de Performance:</strong> Queries &lt;10ms eliminando N+1 con joinedload/selectinload</span></li>
+                      <li className="flex items-start"><span className="text-blue-400 mr-2 font-bold">•</span><span><strong className="text-white">Tests E2E:</strong> Suite completa con Pytest validando +30 endpoints y flujos críticos</span></li>
+                    </ul>
+                  </div>
+
+                  <div className="flex gap-3">
+                    <Button 
+                      size="sm" 
+                      className="bg-blue-600/20 border border-blue-500/50 text-blue-200 hover:bg-blue-600/30 hover:border-blue-400 smooth-hover font-semibold"
+                      onClick={() => window.open('https://github.com/Comision-3-Plus/ConectarProfesionales.git', '_blank')}
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Ver Código
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* VOID E-Commerce */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-gradient-to-br from-green-950/50 to-neutral-900 border-green-500/30 hover:border-green-400/50 transition-all duration-300 group glass glass-hover h-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <CardHeader className="relative z-10">
+                  <div className="flex justify-between items-start mb-4">
+                    <CardTitle className="text-2xl text-white group-hover:text-green-200 transition-colors font-bold">
+                      VOID E-Commerce
+                    </CardTitle>
+                    <Badge className="bg-green-600/30 text-green-200 border-green-500/50 font-semibold">Full Stack</Badge>
+                  </div>
+                  <CardDescription className="text-neutral-300 text-base font-medium">
+                    Plataforma e-commerce completa con microservicios, procesamiento de pagos y dashboard administrativo
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  <p className="text-neutral-200 mb-6 leading-relaxed text-sm">
+                    <strong className="text-green-300">Backend Lead:</strong> Arquitecté y desarrollé la infraestructura completa de backend para e-commerce de alto tráfico con carrito inteligente, checkout optimizado y sistema de gestión de inventario.
+                  </p>
+                  
+                  <ProjectGallery images={voidImages} projectName="VOID E-Commerce" />
+                  
+                  <div className="mb-6 bg-black/30 rounded-lg p-4 border border-green-500/20">
+                    <h4 className="text-green-300 font-semibold mb-3 text-sm flex items-center">
+                      <Code2 className="w-4 h-4 mr-2" />
+                      Stack Tecnológico
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {["FastAPI", "Docker", "MySQL", "MongoDB", "Celery", "Redis", "MercadoPago API"].map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-green-500/40 text-green-200 hover:border-green-400 hover:bg-green-500/10 smooth-hover text-xs font-medium">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="text-white font-semibold mb-3 text-sm">Features Implementados</h4>
+                    <ul className="text-xs text-neutral-300 space-y-2">
+                      <li className="flex items-start"><span className="text-green-400 mr-2 font-bold">•</span><span>Carrito de compras con gestión de stock en tiempo real</span></li>
+                      <li className="flex items-start"><span className="text-green-400 mr-2 font-bold">•</span><span>Checkout completo con cálculo dinámico de envío</span></li>
+                      <li className="flex items-start"><span className="text-green-400 mr-2 font-bold">•</span><span>Dashboard administrativo con métricas y analytics</span></li>
+                      <li className="flex items-start"><span className="text-green-400 mr-2 font-bold">•</span><span>Integración completa con API de MercadoPago</span></li>
+                      <li className="flex items-start"><span className="text-green-400 mr-2 font-bold">•</span><span>Sistema de autenticación JWT y gestión de roles</span></li>
+                    </ul>
+                  </div>
+
+                  <div className="flex gap-3">
+                    <Button 
+                      size="sm" 
+                      className="bg-green-600/20 border border-green-500/50 text-green-200 hover:bg-green-600/30 hover:border-green-400 smooth-hover font-semibold"
                       onClick={() => window.open('https://github.com/Timba-SA/VOID-E-COMMERCE.git', '_blank')}
                     >
                       <Github className="w-4 h-4 mr-2" />
-                      Código
+                      Ver Código
                     </Button>
                   </div>
                 </CardContent>
@@ -185,35 +325,37 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-neutral-900 border-neutral-800 hover:border-neutral-700 transition-all duration-200 group glass glass-hover h-full">
-                <CardHeader>
+              <Card className="bg-gradient-to-br from-orange-950/50 to-neutral-900 border-orange-500/30 hover:border-orange-400/50 transition-all duration-300 group glass glass-hover h-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <CardHeader className="relative z-10">
                   <div className="flex justify-between items-start mb-4">
-                    <CardTitle className="text-xl text-white group-hover:text-neutral-200 transition-colors">
+                    <CardTitle className="text-2xl text-white group-hover:text-orange-200 transition-colors font-bold">
                       Oráculo Futbolero
                     </CardTitle>
-                    <Badge className="bg-neutral-800 text-neutral-300 border-neutral-700">Machine Learning</Badge>
+                    <Badge className="bg-orange-600/30 text-orange-200 border-orange-500/50 font-semibold">Machine Learning</Badge>
                   </div>
-                  <CardDescription className="text-neutral-400 text-base">
-                    Sistema de ML end-to-end con evaluación de modelo y visualización 3D interactiva
+                  <CardDescription className="text-neutral-300 text-base font-medium">
+                    Sistema ML end-to-end con procesamiento de 245K+ registros, predicciones en tiempo real y visualización 3D
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-neutral-400 mb-6 leading-relaxed text-sm">
-                    Sistema completo de predicciones deportivas que procesa datos históricos de equipos para generar 
-                    análisis predictivos. Incluye interfaz de selección, cálculo de probabilidades en tiempo real 
-                    y visualización de estadísticas con gráficos interactivos.
+                <CardContent className="relative z-10">
+                  <p className="text-neutral-200 mb-6 leading-relaxed text-sm">
+                    <strong className="text-orange-300">ML Engineer:</strong> Construí un sistema completo de predicciones deportivas que procesa datos históricos masivos para generar análisis predictivos con visualización interactiva.
                   </p>
                   
                   <ProjectGallery images={oraculoImages} projectName="Oráculo Futbolero" />
                   
-                  <div className="mb-6">
-                    <h4 className="text-white font-medium mb-3 text-sm">Stack Tecnológico</h4>
+                  <div className="mb-6 bg-black/30 rounded-lg p-4 border border-orange-500/20">
+                    <h4 className="text-orange-300 font-semibold mb-3 text-sm flex items-center">
+                      <Brain className="w-4 h-4 mr-2" />
+                      Stack Tecnológico
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {["Python", "FastAPI", "Pandas", "Next.js", "Three.js", "Redis", "Scikit-learn"].map((tech) => (
-                        <Badge key={tech} variant="outline" className="border-neutral-700 text-neutral-400 hover:border-neutral-600 smooth-hover text-xs">
+                        <Badge key={tech} variant="outline" className="border-orange-500/40 text-orange-200 hover:border-orange-400 hover:bg-orange-500/10 smooth-hover text-xs font-medium">
                           {tech}
                         </Badge>
                       ))}
@@ -221,25 +363,24 @@ export default function Home() {
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="text-white font-medium mb-3 text-sm">Features Técnicos</h4>
-                    <ul className="text-xs text-neutral-400 space-y-1">
-                      <li>• Procesamiento de <strong className="text-white">245,000+</strong> registros históricos</li>
-                      <li>• Predicciones con porcentajes de probabilidad precisos</li>
-                      <li>• Gráficos comparativos de estadísticas por equipo</li>
-                      <li>• Dashboard con métricas de corners, tiros y posesión</li>
-                      <li>• Sistema de análisis detallado post-predicción</li>
+                    <h4 className="text-white font-semibold mb-3 text-sm">Features Técnicos</h4>
+                    <ul className="text-xs text-neutral-300 space-y-2">
+                      <li className="flex items-start"><span className="text-orange-400 mr-2 font-bold">•</span><span>Procesamiento de <strong className="text-white">245,000+</strong> registros históricos</span></li>
+                      <li className="flex items-start"><span className="text-orange-400 mr-2 font-bold">•</span><span>Predicciones con porcentajes de probabilidad precisos</span></li>
+                      <li className="flex items-start"><span className="text-orange-400 mr-2 font-bold">•</span><span>Gráficos comparativos de estadísticas por equipo</span></li>
+                      <li className="flex items-start"><span className="text-orange-400 mr-2 font-bold">•</span><span>Dashboard con métricas de corners, tiros y posesión</span></li>
+                      <li className="flex items-start"><span className="text-orange-400 mr-2 font-bold">•</span><span>Sistema de análisis detallado post-predicción</span></li>
                     </ul>
                   </div>
 
                   <div className="flex gap-3">
                     <Button 
                       size="sm" 
-                      variant="outline" 
-                      className="border-neutral-700 text-neutral-300 hover:bg-neutral-800 smooth-hover"
+                      className="bg-orange-600/20 border border-orange-500/50 text-orange-200 hover:bg-orange-600/30 hover:border-orange-400 smooth-hover font-semibold"
                       onClick={() => window.open('https://github.com/JuaniSarmiento/Proyecto-IA-de-Futbol.git', '_blank')}
                     >
                       <Github className="w-4 h-4 mr-2" />
-                      Código
+                      Ver Código
                     </Button>
                   </div>
                 </CardContent>
@@ -250,84 +391,180 @@ export default function Home() {
       </section>
 
       {/* Sobre Mí */}
-      <section id="about" className="py-24 px-6 bg-neutral-950/50">
-        <div className="max-w-4xl mx-auto">
+      <section id="about" className="py-32 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-indigo-950/10 to-black" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/10 via-transparent to-transparent" />
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-24"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium gradient-text-minimal">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text-hero">
               Sobre Mí
             </h2>
+            <p className="text-xl md:text-2xl text-neutral-400 max-w-3xl mx-auto">
+              Backend Engineer & AI Specialist de 19 años
+            </p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-16 items-center"
           >
-            <div>
-              <div className="w-48 h-48 mx-auto md:mx-0 mb-8 md:mb-0 bg-neutral-800 rounded-2xl flex items-center justify-center text-4xl font-light smooth-hover hover:bg-neutral-700 transition-colors">
-                JS
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <p className="text-base text-neutral-300 leading-relaxed">
-                A mis <strong className="text-white">19 años</strong> ya diseñé y desplegué aplicaciones completas que manejan 
-                arquitecturas complejas y procesan miles de datos. Mi pasión por la tecnología va desde 
-                la optimización de bases de datos hasta el entrenamiento de modelos de IA.
-              </p>
-              
-              <p className="text-base text-neutral-300 leading-relaxed">
-                Me especializo en <strong className="text-white">backend engineering</strong> y <strong className="text-white">machine learning</strong>, 
-                siempre buscando la intersección entre rendimiento técnico y impacto real. Disfruto 
-                enfrentando desafíos técnicos complejos y encontrando soluciones elegantes.
-              </p>
-              
-              <p className="text-base text-neutral-300 leading-relaxed">
-                Busco sumarme a <strong className="text-white">equipos dinámicos</strong> donde pueda contribuir con soluciones 
-                técnicas sólidas y aprender de profesionales experimentados para crear productos de alto impacto.
-              </p>
-            </div>
+            <Card className="bg-gradient-to-br from-neutral-900/80 to-neutral-950/80 border-neutral-700/50 backdrop-blur-xl">
+              <CardContent className="p-12">
+                <div className="grid md:grid-cols-[300px_1fr] gap-12 items-start">
+                  {/* Avatar con gradiente */}
+                  <div className="mx-auto md:mx-0">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 rounded-3xl blur-xl opacity-30" />
+                      <div className="relative w-64 h-64 bg-gradient-to-br from-purple-600/20 to-blue-600/20 border-2 border-purple-500/30 rounded-3xl flex items-center justify-center text-6xl font-bold smooth-hover hover:scale-105 transition-transform">
+                        <span className="gradient-text-hero">JS</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Contenido */}
+                  <div className="space-y-8">
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                        <Code2 className="w-6 h-6 mr-3 text-purple-400" />
+                        Mi Historia
+                      </h3>
+                      <p className="text-lg text-neutral-300 leading-relaxed">
+                        A mis <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 font-bold">19 años</span> ya diseñé y desplegué aplicaciones completas que manejan 
+                        arquitecturas complejas y procesan miles de datos. Mi pasión por la tecnología va desde 
+                        la optimización de bases de datos hasta el entrenamiento de modelos de IA.
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                        <Brain className="w-6 h-6 mr-3 text-blue-400" />
+                        Expertise Técnico
+                      </h3>
+                      <p className="text-lg text-neutral-300 leading-relaxed">
+                        Me especializo en <span className="text-white font-semibold">backend engineering</span> y <span className="text-white font-semibold">machine learning</span>, 
+                        siempre buscando la intersección entre rendimiento técnico y impacto real. Disfruto 
+                        enfrentando desafíos técnicos complejos y encontrando soluciones elegantes.
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                        <Server className="w-6 h-6 mr-3 text-green-400" />
+                        Lo Que Busco
+                      </h3>
+                      <p className="text-lg text-neutral-300 leading-relaxed">
+                        Sumarme a <span className="text-white font-semibold">equipos dinámicos</span> donde pueda contribuir con soluciones 
+                        técnicas sólidas y aprender de profesionales experimentados para crear productos de alto impacto.
+                      </p>
+                    </div>
+
+                    {/* Skills destacados */}
+                    <div className="pt-6 border-t border-neutral-700/50">
+                      <h4 className="text-lg font-semibold text-white mb-4">Skills Principales</h4>
+                      <div className="flex flex-wrap gap-3">
+                        <Badge className="bg-blue-600/20 border-blue-500/40 text-blue-200 hover:bg-blue-600/30 smooth-hover text-sm px-4 py-1.5 font-medium">
+                          Python
+                        </Badge>
+                        <Badge className="bg-green-600/20 border-green-500/40 text-green-200 hover:bg-green-600/30 smooth-hover text-sm px-4 py-1.5 font-medium">
+                          FastAPI
+                        </Badge>
+                        <Badge className="bg-blue-600/20 border-blue-500/40 text-blue-200 hover:bg-blue-600/30 smooth-hover text-sm px-4 py-1.5 font-medium">
+                          PostgreSQL
+                        </Badge>
+                        <Badge className="bg-purple-600/20 border-purple-500/40 text-purple-200 hover:bg-purple-600/30 smooth-hover text-sm px-4 py-1.5 font-medium">
+                          Docker
+                        </Badge>
+                        <Badge className="bg-orange-600/20 border-orange-500/40 text-orange-200 hover:bg-orange-600/30 smooth-hover text-sm px-4 py-1.5 font-medium">
+                          Machine Learning
+                        </Badge>
+                        <Badge className="bg-indigo-600/20 border-indigo-500/40 text-indigo-200 hover:bg-indigo-600/30 smooth-hover text-sm px-4 py-1.5 font-medium">
+                          Microservices
+                        </Badge>
+                        <Badge className="bg-green-600/20 border-green-500/40 text-green-200 hover:bg-green-600/30 smooth-hover text-sm px-4 py-1.5 font-medium">
+                          API Design
+                        </Badge>
+                        <Badge className="bg-purple-600/20 border-purple-500/40 text-purple-200 hover:bg-purple-600/30 smooth-hover text-sm px-4 py-1.5 font-medium">
+                          NLP
+                        </Badge>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </section>
 
       {/* Contacto */}
-      <section id="contact" className="py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section id="contact" className="py-32 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-purple-950/20 via-black to-black" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent" />
+        
+        <div className="max-w-5xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 gradient-text-minimal">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 gradient-text-hero">
               ¿Tenés una idea o desafío?
             </h2>
-            <p className="text-lg md:text-xl text-neutral-300 mb-16 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-neutral-300 mb-16 max-w-3xl mx-auto leading-relaxed">
               Hablemos sobre cómo puedo contribuir a tu próximo proyecto
             </p>
             
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button 
-                size="lg" 
-                className="bg-white text-black hover:bg-neutral-100 smooth-hover font-semibold px-10 py-5 text-lg h-auto"
-                onClick={() => window.location.href = 'mailto:juanisarmientoomartinez@gmail.com'}
-              >
-                <Mail className="mr-3 h-6 w-6" />
-                juanisarmientoomartinez@gmail.com
-              </Button>
-            </motion.div>
+            <Card className="bg-gradient-to-br from-neutral-900/50 to-neutral-950/50 border-purple-500/30 backdrop-blur-xl max-w-2xl mx-auto">
+              <CardContent className="p-10">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="mb-8"
+                >
+                  <Button 
+                    size="lg" 
+                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white border-0 smooth-hover font-bold px-8 py-6 text-lg h-auto shadow-lg shadow-purple-500/30"
+                    onClick={() => window.location.href = 'mailto:juanisarmientoomartinez@gmail.com'}
+                  >
+                    <Mail className="mr-3 h-6 w-6" />
+                    juanisarmientoomartinez@gmail.com
+                  </Button>
+                </motion.div>
+
+                <div className="flex justify-center gap-4">
+                  <motion.a
+                    href="https://github.com/JuaniSarmiento"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 rounded-xl bg-neutral-800/50 hover:bg-purple-600/30 transition-all border border-neutral-700 hover:border-purple-500/50 smooth-hover group"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Github className="w-6 h-6 text-neutral-300 group-hover:text-purple-300 transition-colors" />
+                  </motion.a>
+                  <motion.a
+                    href="https://linkedin.com/in/tuusuario"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 rounded-xl bg-neutral-800/50 hover:bg-blue-600/30 transition-all border border-neutral-700 hover:border-blue-500/50 smooth-hover group"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Linkedin className="w-6 h-6 text-neutral-300 group-hover:text-blue-300 transition-colors" />
+                  </motion.a>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </section>
