@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Mail, ExternalLink, ArrowDown, Code2, Brain, Server } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, ArrowDown, Code2, Brain, Server, Award, Calendar, Clock } from "lucide-react";
 import ProjectGallery from "@/components/ProjectGallery";
 import { voidImages, oraculoImages } from "@/data/projectImages";
 
@@ -502,6 +502,144 @@ export default function Home() {
               </CardContent>
             </Card>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Certificaciones */}
+      <section id="certifications" className="py-32 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/10 to-black" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent" />
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-24"
+          >
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text-hero">
+              Certificaciones
+            </h2>
+            <p className="text-xl md:text-2xl text-neutral-400 max-w-3xl mx-auto">
+              Formación continua en tecnologías de vanguardia
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Certificación 1 - Ciencia de Datos */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-gradient-to-br from-blue-950/50 to-neutral-900 border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 group h-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <CardHeader className="relative z-10">
+                  <div className="flex items-start justify-between mb-4">
+                    <Award className="w-12 h-12 text-blue-400" />
+                    <Badge className="bg-blue-600/30 text-blue-200 border-blue-500/50 font-semibold">
+                      Data Science
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-2xl text-white group-hover:text-blue-200 transition-colors font-bold">
+                    Introducción a la Ciencia de Datos
+                  </CardTitle>
+                  <CardDescription className="text-neutral-300 text-base mt-3 leading-relaxed">
+                    Exploración de cómo los datos están transformando el mundo y abriendo nuevos empleos. Procesamiento de quintillones de bytes generados diariamente.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  <div className="space-y-4 mb-6">
+                    <div className="flex items-center gap-3 text-sm text-neutral-400">
+                      <Calendar className="w-4 h-4 text-blue-400" />
+                      <span><strong className="text-white">Fecha:</strong> 30 Agosto 2025</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-neutral-400">
+                      <Clock className="w-4 h-4 text-blue-400" />
+                      <span><strong className="text-white">Duración:</strong> 6 horas</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-neutral-400">
+                      <Award className="w-4 h-4 text-blue-400" />
+                      <span><strong className="text-white">Instructor:</strong> Higinio Alberto Facchini</span>
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-black/30 rounded-lg border border-blue-500/20 mb-4">
+                    <p className="text-xs text-neutral-400 mb-2 font-semibold">Academia:</p>
+                    <p className="text-sm text-blue-200">Universidad Tecnológica Nacional - Facultad Regional Mendoza</p>
+                  </div>
+
+                  <div>
+                    <p className="text-xs text-neutral-400 mb-2 font-semibold">Habilidades:</p>
+                    <Badge className="bg-blue-600/20 border-blue-500/40 text-blue-200 text-xs">
+                      Introducción a la Ciencia de Datos
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Certificación 2 - IA con IBM */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-gradient-to-br from-cyan-950/50 to-neutral-900 border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 group h-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <CardHeader className="relative z-10">
+                  <div className="flex items-start justify-between mb-4">
+                    <Award className="w-12 h-12 text-cyan-400" />
+                    <Badge className="bg-cyan-600/30 text-cyan-200 border-cyan-500/50 font-semibold">
+                      AI & IBM
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-2xl text-white group-hover:text-cyan-200 transition-colors font-bold">
+                    Fundamentos de IA con IBM SkillsBuild
+                  </CardTitle>
+                  <CardDescription className="text-neutral-300 text-base mt-3 leading-relaxed">
+                    Conceptos básicos de aprendizaje automático, deep learning, procesamiento de lenguaje natural y visión artificial con IBM Watson Studio.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  <div className="space-y-4 mb-6">
+                    <div className="flex items-center gap-3 text-sm text-neutral-400">
+                      <Calendar className="w-4 h-4 text-cyan-400" />
+                      <span><strong className="text-white">Fecha:</strong> 12 Agosto 2025</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-neutral-400">
+                      <Clock className="w-4 h-4 text-cyan-400" />
+                      <span><strong className="text-white">Duración:</strong> 10 horas</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-neutral-400">
+                      <Award className="w-4 h-4 text-cyan-400" />
+                      <span><strong className="text-white">Instructor:</strong> Higinio Alberto Facchini</span>
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-black/30 rounded-lg border border-cyan-500/20 mb-4">
+                    <p className="text-xs text-neutral-400 mb-2 font-semibold">Academia:</p>
+                    <p className="text-sm text-cyan-200">Universidad Tecnológica Nacional - Facultad Regional Mendoza</p>
+                  </div>
+
+                  <div>
+                    <p className="text-xs text-neutral-400 mb-2 font-semibold">Habilidades:</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge className="bg-cyan-600/20 border-cyan-500/40 text-cyan-200 text-xs">
+                        IA y Ciencia de Datos
+                      </Badge>
+                      <Badge className="bg-cyan-600/20 border-cyan-500/40 text-cyan-200 text-xs">
+                        IBM SkillsBuild
+                      </Badge>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
         </div>
       </section>
 
