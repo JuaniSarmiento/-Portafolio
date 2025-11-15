@@ -4,108 +4,19 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Mail, ExternalLink, ArrowDown, Code2, Brain, Server, Award, Calendar, Clock } from "lucide-react";
+import { Github, Linkedin, Mail, Code2, Brain, Server, Award, Calendar, Clock } from "lucide-react";
 import ProjectGallery from "@/components/ProjectGallery";
 import { voidImages, oraculoImages } from "@/data/projectImages";
+import ThreeBackground from "@/components/ThreeBackground";
+import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
-        {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-black to-blue-900/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent" />
-        
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="mb-12">
-              <motion.h1 
-                className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 gradient-text-hero tracking-tight"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                Juani Sarmiento
-              </motion.h1>
-              <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
-                <Badge variant="secondary" className="bg-gradient-to-r from-purple-600/20 to-purple-500/20 text-purple-200 border-purple-500/30 badge-glow px-5 py-2.5 text-base font-semibold">
-                  <Code2 className="w-5 h-5 mr-2" />
-                  Backend Developer
-                </Badge>
-                <Badge variant="secondary" className="bg-gradient-to-r from-blue-600/20 to-blue-500/20 text-blue-200 border-blue-500/30 badge-glow px-5 py-2.5 text-base font-semibold">
-                  <Brain className="w-5 h-5 mr-2" />
-                  AI Specialist
-                </Badge>
-                <Badge variant="secondary" className="bg-gradient-to-r from-green-600/20 to-green-500/20 text-green-200 border-green-500/30 badge-glow px-5 py-2.5 text-base font-semibold">
-                  <Server className="w-5 h-5 mr-2" />
-                  Backend Architect
-                </Badge>
-              </div>
-            </div>
-
-            <p className="text-xl md:text-2xl lg:text-3xl text-neutral-200 mb-16 max-w-4xl mx-auto leading-relaxed font-light">
-              Diseño y construyo <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 font-bold">sistemas escalables</span> y <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 font-bold">soluciones inteligentes</span> que transforman ideas en realidad.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
-              <Button 
-                size="lg" 
-                className="bg-white text-black hover:bg-neutral-100 border-0 smooth-hover font-semibold text-lg px-8 py-4 h-auto"
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Ver Mis Proyectos
-                <ArrowDown className="ml-3 h-5 w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="bg-white text-black hover:bg-neutral-100 border-0 smooth-hover font-semibold text-lg px-8 py-4 h-auto"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                <Mail className="mr-3 h-5 w-5" />
-                Contactarme
-              </Button>
-            </div>
-
-            <div className="flex justify-center gap-6">
-              <motion.a
-                href="https://github.com/JuaniSarmiento"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-neutral-900 hover:bg-neutral-800 transition-colors border border-neutral-700 hover:border-neutral-600 smooth-hover"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Github className="w-6 h-6 text-neutral-300" />
-              </motion.a>
-              <motion.a
-                href="https://www.linkedin.com/in/juan-ignacio-sarmiento-b717631b5/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 rounded-xl bg-neutral-900 hover:bg-neutral-800 transition-colors border border-neutral-700 hover:border-neutral-600 smooth-hover"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Linkedin className="w-6 h-6 text-neutral-300" />
-              </motion.a>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <ArrowDown className="w-6 h-6 text-neutral-400" />
-        </motion.div>
-      </section>
+    <>
+      <ThreeBackground />
+      <div className="min-h-screen bg-black text-white relative">
+        {/* Hero Section con animaciones GSAP */}
+        <HeroSection />
 
       {/* Proyectos Destacados */}
       <section id="projects" className="py-32 px-6 relative">
@@ -706,6 +617,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
